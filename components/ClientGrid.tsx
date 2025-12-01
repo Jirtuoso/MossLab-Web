@@ -27,23 +27,32 @@ const ClientGrid: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveLogos(currentLogos => {
-        // 1. Pick a random slot to swap
-        const slotToSwap = Math.floor(Math.random() * GRID_SIZE);
-        
-        // 2. Get IDs of currently displayed logos to avoid duplicates
+        // 1. Get IDs of currently displayed logos to avoid duplicates
         const currentIds = new Set(currentLogos.map(l => l.id));
         
-        // 3. Filter available logos (those not currently shown)
+        // 2. Filter available logos (those not currently shown)
         const availableLogos = ALL_LOGOS.filter(l => !currentIds.has(l.id));
         
         if (availableLogos.length === 0) return currentLogos;
 
-        // 4. Pick a random new logo
+        // 3. Pick a random new logo from available ones
         const newLogo = availableLogos[Math.floor(Math.random() * availableLogos.length)];
         
-        // 5. Create new array with swap
+        // 4. Pick a random slot to swap
+        const slotToSwap = Math.floor(Math.random() * GRID_SIZE);
+        
+        // 5. Create new array with swap and verify no duplicates
         const newLogos = [...currentLogos];
         newLogos[slotToSwap] = newLogo;
+        
+        // 6. Final check: ensure no duplicates in the new array
+        const newIds = newLogos.map(l => l.id);
+        const hasDuplicates = newIds.length !== new Set(newIds).size;
+        
+        if (hasDuplicates) {
+          // If somehow duplicates exist, return current state
+          return currentLogos;
+        }
         
         return newLogos;
       });

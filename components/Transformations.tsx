@@ -76,7 +76,7 @@ const Transformations: React.FC = () => {
               What we Do
             </span>
             <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter text-kiln-forest leading-[0.9] break-words">
-              YOUR GTM<br />TRANSFORMATION.
+              YOUR PROBLEMS,<br />OUR SOLUTIONS.
             </h2>
         </div>
 
