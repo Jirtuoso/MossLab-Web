@@ -63,7 +63,7 @@ const About: React.FC = () => {
           </div>
 
           {/* Right Column - Forest SVG */}
-          <div className="relative h-full min-h-[500px] lg:min-h-0">
+          <div className="hidden md:block relative h-full min-h-[500px] lg:min-h-0">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
