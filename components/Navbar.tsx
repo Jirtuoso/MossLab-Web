@@ -78,9 +78,7 @@ const Navbar: React.FC = () => {
               onClick={(e) => handleScroll(e, item.href)}
               className="text-2xl font-display font-bold uppercase tracking-wide hover:text-kiln-leaf transition-colors group flex items-center cursor-pointer gap-2"
             >
-              <span className="text-kiln-forest font-black" aria-hidden="true">[</span> 
-              <span>{item.label}</span> 
-              <span className="text-kiln-forest font-black" aria-hidden="true">]</span>
+              <span>{item.label}</span>
             </a>
           ))}
         </div>
