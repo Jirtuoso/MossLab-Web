@@ -75,7 +75,7 @@ const Transformations: React.FC = () => {
             <span className="text-kiln-sage font-mono text-xs font-bold uppercase tracking-widest mb-4 block opacity-80">
               What we Do
             </span>
-            <h2 className="text-4xl md:text-7xl font-display font-bold tracking-tighter text-kiln-forest leading-[0.9] break-words">
+            <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter text-kiln-forest leading-[0.9] break-words">
               YOUR GTM<br />TRANSFORMATION.
             </h2>
         </div>
