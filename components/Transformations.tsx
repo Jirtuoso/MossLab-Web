@@ -37,9 +37,9 @@ const items = [
     after: {
       header: "Evergreen Data",
       points: [
-        "Auto-deduped & enriched records",
-        "Zero manual data entry required",
-        "Live sync across full stack"
+        "Deduped & up-to-date records",
+        "CRM automations",
+        "CRM-native lead scoring"
       ]
     }
   },
@@ -57,9 +57,9 @@ const items = [
     after: {
       header: "Catch-All Process",
       points: [
-        "Signal-based enrichment (web visits, inbound calls, …)",
-        "Instant personalized reachouts",
-        "Industry-specific prioritization"
+        "Signal-based enrichment (web visits, ...)",
+        "Inbound-led outbound",
+        "Designed offers"
       ]
     }
   }

@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Case Studies', href: '#testimonials' },
+    { label: 'Past clients', href: '#testimonials' },
     { label: 'About', href: '#about' }
   ];
 
