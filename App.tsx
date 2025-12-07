@@ -6,7 +6,8 @@ import ClientGrid from './components/ClientGrid';
 import Testimonials from './components/Testimonials';
 import Transformations from './components/Transformations';
 import About from './components/About';
-import { Leaf, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import MailIcon from './components/MailIcon';
 
 const MarkerUnderline = () => (
   <svg
@@ -18,7 +19,7 @@ const MarkerUnderline = () => (
       d="M2.00025 6.99997C28.5284 3.75438 106.671 -0.734561 198.001 2.50001"
       fill="none"
       stroke="#859F3D" // kiln-leaf
-      strokeWidth="5"
+      strokeWidth="8"
       strokeLinecap="round"
       initial={{ pathLength: 0 }}
       animate={{ pathLength: 1 }}
@@ -44,7 +45,7 @@ const App: React.FC = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-5xl md:text-6xl lg:text-8xl xl:text-9xl leading-tight font-display font-black tracking-tighter uppercase mb-2 md:mb-6 text-kiln-forest relative max-w-5xl xl:max-w-7xl mx-auto"
+                className="text-6xl md:text-7xl lg:text-9xl xl:text-[12rem] leading-tight font-display font-black tracking-tighter uppercase mb-2 md:mb-6 text-kiln-forest relative max-w-5xl xl:max-w-7xl mx-auto"
               >
                 <span className="relative inline-block mr-3">
                   2x
@@ -61,7 +62,7 @@ const App: React.FC = () => {
                   transition={{ delay: 0.5 }}
                   className="text-xl md:text-3xl xl:text-4xl text-kiln-sage font-normal leading-relaxed max-w-6xl xl:max-w-7xl px-2"
                 >
-                  We engineer scalable GTM (go-to-market) systems to drive pipeline, streamline operations, and hit your revenue targets. <br className="hidden md:block" /> 100% satisfaction guaranteed.
+                  We engineer scalable <strong>Go-To-Market</strong> systems to drive pipeline, streamline operations, and hit your revenue targets. <br className="hidden md:block" /> 100% satisfaction guaranteed.
                 </motion.p>
 
                 <motion.a
@@ -75,7 +76,7 @@ const App: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-kiln-gold text-kiln-forest px-8 py-4 md:px-10 md:py-5 rounded-lg font-bold text-lg md:text-xl xl:text-2xl flex items-center gap-3 shadow-xl hover:bg-white hover:text-kiln-gold transition-colors border border-kiln-gold cursor-pointer"
                 >
-                  Book a Free Audit <Leaf size={20} className="animate-bounce" />
+                  Book your Free Audit in 60 seconds <MailIcon size={24} className="md:w-7 md:h-7 xl:w-8 xl:h-8" aria-hidden="true" />
                 </motion.a>
               </div>
 
@@ -115,7 +116,7 @@ const App: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-kiln-gold text-kiln-forest px-8 py-4 text-lg md:px-12 md:py-6 md:font-bold md:text-2xl rounded-lg font-bold flex items-center justify-center gap-3 shadow-2xl hover:bg-white hover:text-kiln-gold transition-colors w-full md:w-auto cursor-pointer"
                 >
-                  Book a Free Audit <Leaf size={24} className="animate-bounce" />
+                  Book your free audit <MailIcon size={28} className="md:w-8 md:h-8" aria-hidden="true" />
                 </motion.a>
               </div>
             </div>

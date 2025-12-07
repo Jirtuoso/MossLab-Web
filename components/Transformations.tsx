@@ -57,7 +57,7 @@ const items = [
     after: {
       header: "Catch-All Process",
       points: [
-        "Signal-based enrichment (web visits, ...)",
+        "Signal-based enrichment",
         "Inbound-led outbound",
         "Designed offers"
       ]
@@ -72,7 +72,7 @@ const Transformations: React.FC = () => {
         
         {/* Standardized Section Header */}
         <div className="mb-20">
-            <span className="text-kiln-sage font-mono text-xs font-bold uppercase tracking-widest mb-4 block opacity-80">
+            <span className="text-kiln-sage font-mono text-sm md:text-base font-bold uppercase tracking-widest mb-4 block opacity-80">
               What we Do
             </span>
             <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter text-kiln-forest leading-[0.9] break-words">
@@ -102,10 +102,10 @@ const Transformations: React.FC = () => {
                         
                         <h4 className="text-3xl md:text-4xl font-display font-bold text-gray-400 mb-6 md:mb-6 line-through decoration-2 decoration-gray-300">{item.before.header}</h4>
                         
-                        <ul className="space-y-4 md:space-y-4">
+                        <ul className="space-y-4 md:space-y-4 list-none">
                             {item.before.points.map((point, i) => (
-                                <li key={i} className="flex items-start gap-4 text-gray-700 text-lg font-medium leading-relaxed">
-                                    <span className="mt-2 w-2 h-2 rounded-full bg-gray-300 shrink-0" />
+                                <li key={i} className="flex items-start gap-4 text-gray-700 text-xl md:text-2xl font-medium leading-relaxed">
+                                    <span className="block mt-2.5 w-2 h-2 min-w-[0.5rem] min-h-[0.5rem] rounded-full bg-gray-300 shrink-0 flex-shrink-0" />
                                     {point}
                                 </li>
                             ))}
@@ -138,10 +138,10 @@ const Transformations: React.FC = () => {
                         
                         <h4 className="text-3xl md:text-4xl font-display font-bold text-kiln-forest mb-6 md:mb-6">{item.after.header}</h4>
                         
-                        <ul className="space-y-4 md:space-y-4">
+                        <ul className="space-y-4 md:space-y-4 list-none">
                             {item.after.points.map((point, i) => (
-                                <li key={i} className="flex items-start gap-4 text-kiln-forest text-lg font-medium leading-relaxed">
-                                    <span className="mt-2 w-2 h-2 rounded-full bg-kiln-leaf shrink-0" />
+                                <li key={i} className="flex items-start gap-4 text-kiln-forest text-xl md:text-2xl font-medium leading-relaxed">
+                                    <span className="block mt-2.5 w-2 h-2 min-w-[0.5rem] min-h-[0.5rem] rounded-full bg-kiln-leaf shrink-0 flex-shrink-0" />
                                     {point}
                                 </li>
                             ))}

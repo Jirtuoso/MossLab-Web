@@ -21,7 +21,7 @@ module.exports = {
           stone: '#D8DBD0', /* Borders */
           mist: '#F0F2EB', /* Secondary Backgrounds */
           black: '#0a0a0a',
-          gold: '#D4AF37', /* Premium Gold */
+          gold: '#FFD700', /* Vibrant Gold */
         }
       },
     },

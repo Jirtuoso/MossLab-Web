@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Leaf } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import MailIcon from './MailIcon';
 
 const MossLogo = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 140 100" className={className} xmlns="http://www.w3.org/2000/svg">
@@ -91,8 +92,8 @@ const Navbar: React.FC = () => {
             rel="noopener noreferrer"
             className="pointer-events-auto flex items-center gap-2 bg-kiln-gold text-kiln-forest px-6 py-3 rounded-lg text-xs md:text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-kiln-gold transition-all hover:shadow-lg hover:-translate-y-0.5 border border-kiln-gold group"
           >
-            BOOK A FREE AUDIT
-            <Leaf size={16} className="group-hover:animate-bounce" aria-hidden="true" />
+            BOOK YOUR FREE AUDIT
+            <MailIcon size={16} className="md:w-5 md:h-5" aria-hidden="true" />
           </a>
         </div>
 

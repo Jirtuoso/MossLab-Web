@@ -80,10 +80,10 @@ const ClientGrid: React.FC = () => {
                   className="flex items-center gap-3 px-4"
                 >
                   <logo.icon 
-                    size={28} 
+                    size={36} 
                     className="text-kiln-forest stroke-[1.5]"
                   />
-                  <span className="text-xl md:text-2xl font-display font-bold text-kiln-forest tracking-tight">
+                  <span className="text-2xl md:text-3xl font-display font-bold text-kiln-forest tracking-tight">
                     {logo.name}
                   </span>
                 </motion.div>

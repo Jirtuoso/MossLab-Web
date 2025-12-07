@@ -10,7 +10,7 @@ const About: React.FC = () => {
           
           {/* Left Column - Content */}
           <div className="flex flex-col h-full">
-            <span className="text-kiln-sage font-mono text-xs font-bold uppercase tracking-widest mb-4 block opacity-80">
+            <span className="text-kiln-sage font-mono text-sm md:text-base font-bold uppercase tracking-widest mb-4 block opacity-80">
               Who we are
             </span>
             <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tighter text-kiln-forest leading-[0.9] mb-8">
@@ -22,7 +22,7 @@ const About: React.FC = () => {
                 Hi, I'm Jay Hou, the founder of Moss Lab. Based out of San Francisco, I was an early adopter of key go-to-market tools such as Clay.com, Gumloop, and Attio. 
               </p>
               <p>
-                Having worked with top F50 companies / startups throughout my career in management consulting, tech sales, and fintech, I bring a strong operator skillset with experienced business acumen.
+                Having worked with top F50 companies / YC startups throughout my career in management consulting, tech sales, and fintech, I bring a strong operator skillset with experienced business acumen.
               </p>
               <p>
                 Moss Lab was founded out of a hatred for inefficiency. We work towards understanding what keeps you up at night and working in tandem with your team to build lasting, efficient systems.
@@ -62,56 +62,77 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column - Forest SVG */}
-          <div className="hidden md:block relative h-full min-h-[500px] lg:min-h-0">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="w-full h-full rounded-[2rem] overflow-hidden border border-kiln-stone relative bg-kiln-mist/30 flex items-end justify-center"
-            >
-               {/* Background Gradient */}
-               <div className="absolute inset-0 bg-gradient-to-t from-kiln-forest/10 to-transparent z-0"></div>
-
-               {/* Stylized Forest SVG */}
-               <svg 
-                  viewBox="0 0 400 500" 
-                  className="w-full h-full absolute inset-0 text-kiln-forest"
-                  preserveAspectRatio="xMidYMax slice"
-               >
-                  {/* Distant Trees (Lighter/Smaller) */}
-                  <g opacity="0.3">
-                    <path d="M50 500 L100 350 L150 500 Z" fill="currentColor" />
-                    <path d="M250 500 L300 320 L350 500 Z" fill="currentColor" />
-                    <path d="M150 500 L200 380 L250 500 Z" fill="currentColor" />
-                  </g>
-
-                  {/* Mid-ground Trees */}
-                  <g opacity="0.6">
-                    <path d="M-20 500 L80 250 L180 500 Z" fill="currentColor" />
-                    <path d="M280 500 L380 280 L480 500 Z" fill="currentColor" />
-                  </g>
-
-                  {/* Foreground Trees (Darker/Larger) */}
-                  <g opacity="1">
-                    <path d="M100 500 L200 150 L300 500 Z" fill="currentColor" />
-                    {/* Trunk */}
-                    <rect x="190" y="480" width="20" height="20" fill="#132A13" />
-                  </g>
-                  
-                  {/* Abstract Ground */}
-                  <path d="M0 480 Q 200 460 400 480 L 400 500 L 0 500 Z" fill="currentColor" />
-               </svg>
-
-               {/* Overlay Text/Logo (Optional branding touch) */}
-               <div className="absolute top-8 right-8 z-10">
-                  <div className="w-12 h-12 rounded-full border border-kiln-forest/20 flex items-center justify-center">
-                    <span className="font-display font-bold text-kiln-forest text-xl">M</span>
+          {/* Right Column - Grid + Forest SVG */}
+          <div className="hidden md:flex flex-col h-full">
+            {/* 3x2 Grid - Aligned with top of "YOUR NEW PARTNER" */}
+            <div className="grid grid-cols-3 grid-rows-2 gap-4 mb-6 mt-[3.5rem] md:mt-[4.5rem]">
+              {[...Array(6)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white border border-kiln-stone rounded-xl p-4 flex items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="w-8 h-8 rounded-full bg-kiln-mist border border-kiln-stone/30 flex items-center justify-center">
+                    <span className="text-kiln-forest text-sm font-display font-bold">{i + 1}</span>
                   </div>
-               </div>
+                </motion.div>
+              ))}
+            </div>
 
-            </motion.div>
+            {/* Forest SVG - Expands to align with bottom of credential cards */}
+            <div className="relative flex-1 min-h-[400px]">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="w-full h-full rounded-[2rem] overflow-hidden border border-kiln-stone relative bg-kiln-mist/30 flex items-end justify-center"
+              >
+                 {/* Background Gradient */}
+                 <div className="absolute inset-0 bg-gradient-to-t from-kiln-forest/10 to-transparent z-0"></div>
+
+                 {/* Stylized Forest SVG */}
+                 <svg 
+                    viewBox="0 0 400 500" 
+                    className="w-full h-full absolute inset-0 text-kiln-forest"
+                    preserveAspectRatio="xMidYMin meet"
+                 >
+                    {/* Distant Trees (Lighter/Smaller) */}
+                    <g opacity="0.3">
+                      <path d="M50 500 L100 350 L150 500 Z" fill="currentColor" />
+                      <path d="M250 500 L300 320 L350 500 Z" fill="currentColor" />
+                      <path d="M150 500 L200 380 L250 500 Z" fill="currentColor" />
+                    </g>
+
+                    {/* Mid-ground Trees */}
+                    <g opacity="0.6">
+                      <path d="M-20 500 L80 250 L180 500 Z" fill="currentColor" />
+                      <path d="M280 500 L380 280 L480 500 Z" fill="currentColor" />
+                    </g>
+
+                    {/* Foreground Trees (Darker/Larger) */}
+                    <g opacity="1">
+                      <path d="M100 500 L200 150 L300 500 Z" fill="currentColor" />
+                      {/* Trunk */}
+                      <rect x="190" y="480" width="20" height="20" fill="#132A13" />
+                    </g>
+                    
+                    {/* Abstract Ground */}
+                    <path d="M0 480 Q 200 460 400 480 L 400 500 L 0 500 Z" fill="currentColor" />
+                 </svg>
+
+                 {/* Overlay Logo */}
+                 <div className="absolute top-8 right-8 z-10">
+                    <div className="px-4 py-2 rounded-lg bg-white/80 backdrop-blur-sm flex items-center justify-center">
+                      <span className="font-display font-bold text-kiln-forest text-sm uppercase tracking-tight">MOSS LAB</span>
+                    </div>
+                 </div>
+
+              </motion.div>
+            </div>
           </div>
 
         </div>
